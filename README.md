@@ -32,4 +32,4 @@ Doctors, nurses, patient (registration / update), <br>
 table creation and appropriate authorization (all rights) <br>
 
 .* Additional information for understanding table relationships : 
-[SQL DB 병원관리시스템.txt](https://github.com/JAlthea/Hospital-member-management-system/tree/master/HMS%20Project/important%20files/SQL DB 병원관리시스템.txt)
+[SQL DB 병원관리시스템.txt](https://github.com/JAlthea/Hospital-member-management-system/tree/master/HMS%20Project/important%20files/SQL%DB%병원관리시스템.txt)
