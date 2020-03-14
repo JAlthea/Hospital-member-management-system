@@ -1,0 +1,9 @@
+tmp[0].ToString() => 속성의 이름(예: EMPNO)
+tmp[1].ToString() => 속성의 인덱스 위치(0: 테이블의 첫 번째 순서)
+tmp[2].ToString() => 속성의 넘버(19: Decimal, 16: DateTime, 10: VARCHAR2(10), 9: VARCHAR2(9), 8: Double)
+tmp[3].ToString() => 데이터표현1 : NUMBER(7,2)=정수5글자, NUMBER(4)=정수4글자        단, VARCHAR2의 경우는 255
+tmp[4].ToString() => 데이터표현2 : NUMBER(7,2)=소숫점2글자, NUMBER(4)=소숫점0글자       단, VARCHAR2의 경우는 255
+tmp[5].ToString() => 데이터타입 : NUMBER(4)=Decimal, NUMBER(7,2)=Decimal, NUMBER=Double, VARCHAR2(10)=String, DateTime
+tmp[6].ToString() => 속성의 분류번호(131: Decimal, 200: VARCHAR2, 135: DateTime, 5: Double)
+tmp[7].ToString() => 
+tmp[8].ToString() => 널 허용여부(False=허용안함, True=허용함)
