@@ -8,6 +8,9 @@ This project was written in Visual Studio 2017. <br>
 
 
 # Execution screen
+![alt-tag](images/doctor_gif1.GIF)
+![alt-tag](images/doctor_gif1.GIF)
+![alt-tag](images/doctor_gif1.GIF)
 <div><img src="images/doctor_gif1.GIF" width="250" height="300"></div>
 <div><img src="images/doctor_gif2.GIF" width="250" height="300"></div>
 <div><img src="images/doctor_gif3.GIF" width="250" height="300"></div>
