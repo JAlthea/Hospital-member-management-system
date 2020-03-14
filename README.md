@@ -8,5 +8,8 @@ This project was written in Visual Studio 2017. <br>
 
 
 # Execution screen
+<div><img src="images/doctor_gif1.GIF" width="250" height="300"></div>
+<div><img src="images/doctor_gif2.GIF" width="250" height="300"></div>
+<div><img src="images/doctor_gif3.GIF" width="250" height="300"></div>
 
 # Description
