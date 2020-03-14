@@ -6,7 +6,7 @@ This project was written in Visual Studio 2017. <br>
 <div><img src="images/HMS File Info.JPG"></div>
  
 # Play video
-
+[admin_play.mp4](admin_play.mp4) <br>
 
 # Execution screen
 <b>Example member : doctor</b> <br><br>
