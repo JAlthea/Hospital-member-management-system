@@ -1,0 +1,163 @@
+create user manager identified by 1111 default tablespace student;
+grant dba to manager;
+
+create table 의사 (
+	의사번호 number(4) primary key,
+	이름 varchar2(10),
+	진료과목 varchar2(20));
+
+create table 간호사 (
+	간호사번호 number(4) primary key,
+	이름 varchar2(10),
+	담당업무 varchar2(20));
+
+create table 환자 (
+	환자번호 number(6) primary key,
+	이름 varchar2(10),
+	의사번호 number(4) not null references 의사(의사번호),
+	간호사번호 number(4) not null references 간호사(간호사번호));
+
+create table 진료 (
+	진료번호 number(8) primary key,
+	환자번호 number(6) not null references 환자(환자번호),
+	의사번호 number(4) not null references 의사(의사번호),
+	날짜 date	,
+	진료내용 varchar2(200));
+
+create table 차트 (
+	차트번호 number(8) primary key,
+	진료번호 number(8) not null references 진료(진료번호),
+	간호사번호 number(4) not null references 간호사(간호사번호),
+	의사소견 varchar2(200));
+
+insert into 의사 values(1004, '이국종', '외상외과');
+insert into 의사 values(2000, '김사랑', '치과');
+insert into 의사 values(3000, '이승재', '이비인후과');
+
+insert into 간호사 values(1004, '김한별', '담당의보조');
+insert into 간호사 values(1005, '이해영', '담당의보조');
+
+insert into 환자 values(921210, '장용민', 3000, 1004);
+insert into 환자 values(961222, '장유민', 2000, 1005);
+
+insert into 진료 values(00001000, 921210, 3000, sysdate, '-');
+insert into 진료 values(00001001, 921210, 2000, sysdate, '-');
+insert into 진료 values(00001002, 921210, 3000, sysdate, '-');
+insert into 진료 values(00001003, 961222, 2000, sysdate, '-');
+insert into 진료 values(00001004, 961222, 3000, sysdate, '-');
+
+insert into 차트 values(00001000, 00001000, 1004, '-');
+insert into 차트 values(00001001, 00001001, 1004, '-');
+insert into 차트 values(00001002, 00001002, 1005, '-');
+insert into 차트 values(00001003, 00001003, 1005, '-');
+insert into 차트 values(00001004, 00001004, 1004, '-');
+
+<ID 생성 예> 
+do, nu, pa는 로그인할 때 회원종류로 구분되고, 자동으로 더해짐
+의사계정 : do + 1004/1111 => do1004
+간호사계정 : nu + 1004/1111 => nu1004
+환자계정 : pa + 921210/1111 => pa921210
+관리자계정 : manager/1111
+* HMS 프로그램에서는 아이디를 ex) 1004 숫자 형태로 한다.
+* DB에서 아이디를 등록 할 때는 앞글자가 더해진 ex) do1004 형태로 한다.
+
+<회원가입 예>
+관리자만 회원가입을 시켜줄 수 있다.
+SQL문이나 HMS를 이용해서 관리한다.
+
+create user do1004 identified by 1111;
+create user do2000 identified by 1111;
+create user do3000 identified by 1111;
+create user nu1004 identified by 1111;
+create user nu1005 identified by 1111;
+create user pa921210 identified by 1111;
+create user pa961222 identified by 1111;
+
+<의사>
+다룰 수 있는 테이블은 자신에 대한 정보(열람), 진료내용(작성), 의사소견(작성)
+<간호사>
+다룰 수 있는 테이블은 자신에 대한 정보(열람), 진료 등록, 차트 등록, 담당환자 검색
+<환자>
+다룰 수 있는 테이블은 자신에 대한 정보(열람), 자신의 차트 검색
+<관리자>
+의사, 간호사, 환자 등록/관리 (모든권한), 테이블 생성 및 적절한 권한 부여
+
+====================================
+create view 개인정보_do3000 as
+  select 의사번호, 이름, 진료과목
+  from 의사
+  where 의사번호 = 3000 with read only
+
+create view 진료내용_do3000 as
+  select 진료번호, 환자번호, 의사번호, 날짜, 진료내용
+  from 진료
+  where 의사번호 = 3000 with check option
+
+create view 의사소견_do3000 as
+  select 차트번호, 진료번호, 간호사번호, 의사소견
+  from 차트
+  where 진료번호 in (select 진료번호 from 진료 where 의사번호 = 3000) with check option
+
+grant connect to do3000
+grant select on 개인정보_do3000 to do3000
+grant select, insert, delete, update on 진료내용_do3000 to do3000
+grant select, insert, delete, update on 의사소견_do3000 to do3000
+====================================
+create view 개인정보_nu1005 as
+  select 간호사번호, 이름, 담당업무
+  from 간호사
+  where 간호사번호 = 1005 with read only
+
+create view 담당환자_nu1005 as
+  select 환자번호, 이름, 의사번호, 간호사번호
+  from 환자
+  where 간호사번호 = 1005 with read only
+
+create view 진료등록_nu1005 as
+  select 진료번호, 환자번호, 의사번호, 날짜
+  from 진료
+
+create view 차트등록_nu1005 as
+  select 차트번호, 진료번호, 간호사번호
+  from 차트
+  where 간호사번호 = 1005 with check option
+
+grant connect to nu1005
+grant select on 개인정보_nu1005 to nu1005
+grant select, insert, delete, update on 진료등록_nu1005 to nu1005
+grant select, insert, delete, update on 차트등록_nu1005 to nu1005
+grant select on 담당환자_nu1005 to nu1005
+====================================
+create view 개인정보_pa961222 as
+  select 환자번호, 이름, 의사번호, 간호사번호
+  from 환자
+  where 환자번호 = 961222 with read only
+
+create view 개인차트_pa961222 as
+  select 차트번호, 진료번호, 간호사번호, 의사소견
+  from 차트
+  where 진료번호 in (select 진료번호 from 진료 where 환자번호 = 961222) with read only
+
+grant connect to pa961222
+grant select on 개인정보_pa961222 to pa961222
+grant select on 개인차트_pa961222 to pa961222
+====================================
+
+
+
+
+<모든 데이터 삭제>
+drop table 차트;
+drop table 진료;
+drop table 환자;
+drop table 간호사;
+drop table 의사;
+drop view 개인정보_환자;
+drop view 개인차트_환자;
+drop view 개인정보_간호사;
+drop view 진료등록_간호사;
+drop view 차트등록_간호사;
+drop view 담당환자_간호사;
+drop view 개인정보_의사;
+drop view 진료내용_의사;
+drop view 의사소견_의사;
