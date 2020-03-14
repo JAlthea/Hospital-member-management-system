@@ -16,17 +16,19 @@ This project was written in Visual Studio 2017. <br>
 
 # Description
 #Doctor <br>
-Tables that can be handled include information about yourself (read), <br>
+What you can handle : information about yourself (read), <br>
 care-details (read / write), doctor-opinion (read / write) <br>
 
 #Nurse <br>
-Tables that can be handled include information about yourself (read), <br>
+What you can handle : information about yourself (read), <br>
 care-details (registration), medical-chart (registration), the patient in charge (read) <br>
 
 #Patient <br>
-Tables you can handle are information about yourself (read), <br>
+What you can handle : information about yourself (read), <br>
 your own charts (read) <br>
 
 #Administrator <br>
 Doctors, nurses, patient (registration / update), <br>
 table creation and appropriate authorization (all rights) <br>
+
+* Additional information for understanding table structure : 
