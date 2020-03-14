@@ -8,6 +8,7 @@ This project was written in Visual Studio 2017. <br>
 
 
 # Execution screen
+<b>Example member : doctor</b> <br>
 ![alt-tag](images/doctor_gif1.gif)
 ![alt-tag](images/doctor_gif2.gif)
 ![alt-tag](images/doctor_gif3.gif)
