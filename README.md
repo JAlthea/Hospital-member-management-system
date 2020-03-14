@@ -31,4 +31,4 @@ your own charts (read) <br>
 Doctors, nurses, patient (registration / update), <br>
 table creation and appropriate authorization (all rights) <br>
 
-* Additional information for understanding table relationships : SQL file
+.* Additional information for understanding table relationships : [HMS Project/important files/SQL DB 병원관리시스템.txt](SQL DB 병원관리시스템.txt)
