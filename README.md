@@ -31,5 +31,5 @@ your own charts (read) <br>
 Doctors, nurses, patient (registration / update), <br>
 table creation and appropriate authorization (all rights) <br>
 
-.* Additional information for understanding table relationships : 
+* Additional information for understanding table relationships : 
 [All SQL Information](https://github.com/JAlthea/Hospital-member-management-system/blob/master/HMS%20Project/important%20files/all%20SQL%20info.txt)
