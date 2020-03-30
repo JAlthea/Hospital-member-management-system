@@ -1,6 +1,6 @@
 # Hospital member management system - HMS
 It's a hospital member management program using a database. <br>
-Used tech stack : <b>C#, Oracle 11g</b> <br>
+Used tech : <b>C#, Oracle 11g</b> <br>
 This project was written in Visual Studio 2017. <br>
 [HMS.zip](HMS.zip) <br>
 <div><img src="images/HMS File Info.JPG"></div>
