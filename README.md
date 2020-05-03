@@ -9,7 +9,7 @@ Used tech : <b>C#, Oracle 11g</b> <br>
 [admin_play.mp4](admin_play.mp4) <br>
 
 # Execution screen
-<b>Example member : doctor</b> <br><br>
+<b>* Example member : doctor</b> <br><br>
 ![alt-tag](images/doctor_gif1.gif)
 ![alt-tag](images/doctor_gif2.gif)
 ![alt-tag](images/doctor_gif3.gif)
