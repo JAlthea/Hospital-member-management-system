@@ -11,7 +11,7 @@ Used tech : <b>C#, Oracle 11g</b> <br>
 # Execution screen
 <b>* Example member : doctor</b> <br><br>
 ![alt-tag](images/login_loading.gif)
-![alt-tag](images/doctor_gif3.gif) <br>
+![alt-tag](images/doctor_gif3.gif) <br><br>
 ![alt-tag](images/admin_play_part.gif)
 
 # Description
