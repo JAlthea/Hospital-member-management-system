@@ -10,9 +10,9 @@ Used tech : <b>C#, Oracle 11g</b> <br>
 
 # Execution screen
 <b>* Example member : doctor</b> <br><br>
-![alt-tag](images/doctor_gif1.gif)
-![alt-tag](images/doctor_gif2.gif)
+![alt-tag](images/login_loading.gif)
 ![alt-tag](images/doctor_gif3.gif)
+![alt-tag](images/admin_play_part.gif)
 
 # Description
 #Doctor <br>
