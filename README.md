@@ -15,6 +15,8 @@ Used tech : <b>C#, Oracle 11g</b> <br>
 ![alt-tag](images/admin_play_part.gif)
 
 # Description
+<b>* All user type include CRUD.</b><br>
+
 #Doctor <br>
 What you can handle : information about yourself (read), <br>
 care-details (read / write), doctor-opinion (read / write) <br>
