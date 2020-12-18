@@ -1,7 +1,7 @@
 # Hospital member management system - HMS
 It's a hospital member management program using a database. <br>
 Used tech : <b>C#, Oracle 11g, OLEDB api, MetroFramework UI</b> <br>
-Transaction Isolation Level : Read Committed (Default)
+Transaction Isolation Level : Read Committed (Oracle Default)
 
 [HMS.zip](HMS.zip) <br>
 <div><img src="images/HMS File Info.JPG"></div>
